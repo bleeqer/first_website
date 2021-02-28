@@ -1,0 +1,38 @@
+{% extends 'portfolio/base.html' %}
+
+
+{% block content %}
+
+<div class="about-container">
+    <div class="about">
+        <img src="/static/images/profile.jpg" alt="">
+        <div class="about-text">
+            <p><b>Hello,</b></p>
+            <p>Welcome to my website!</p>
+            <p>I'm a developer whose life is all about coding, programming and problem solving.</p>
+            <button>Contact Me</button>
+            <button>Resume</button>
+        </div>
+    </div>
+
+    <div class="portfolios">
+        <span>&#139;</span>
+        <span>&#155;</span>
+    
+        <div class=slider>
+        {% for portfolio in portfolios %}
+    
+        <div class='portfolio'>
+            <img class="portImage" src="{{ portfolio.image.url }}"></img>
+            <div class="portTitle">{{ portfolio.title }}</div>
+            <div class="portDescription">{{ portfolio.description }}</div>
+            <div class="portTime">{{ portfolio.uploadTime }}</div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
